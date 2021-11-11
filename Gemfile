@@ -31,6 +31,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise', '~> 4.8'
 gem 'devise_token_auth', '~> 1.2'
 
+# gem 'rack-rewrite', '~> 1.5', '>= 1.5.1'
+
 gem 'pry-rails'
 
 

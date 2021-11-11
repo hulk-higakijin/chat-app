@@ -14,8 +14,10 @@
 
 <script>
 import axios from 'axios'
+import setItem from '../auth/setItem'
 
 export default {
+  emits: ['redirectToChatRoom'],
   data () {
     return {
       name: '',
@@ -33,10 +35,14 @@ export default {
           name: this.name,
           email: this.email,
           password: this.password,
-          password_confirmation: this.password_confirmation
+          password_confirmation: this.passwordConfirmation
         })
         if (!res) {
           throw new Error('アカウントを登録できませんでした')
+        }
+        if (!this.error) {
+          setItem(res.headers, res.data.data.name)
+          this.$emit('redirectToChatRoom')
         }
         return res
       } catch (error) {
@@ -45,5 +51,4 @@ export default {
     }
   }
 }
-// ６−９まで実装完了。　エラーなし。
 </script>
