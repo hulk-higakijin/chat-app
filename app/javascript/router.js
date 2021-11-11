@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './components/home.vue'
+// import Home from './components/home.vue'
 import Welcome from '../javascript/pages/Welcome.vue'
 Vue.use(Router)
 
@@ -33,24 +33,16 @@ export default new Router({
   
   // ルーターの設定
   routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: Home
-    },
-    {
-      path: '/article/:id',
-      name: 'Article',
-      
-      // 非同期でコンポーネントを呼び出す
-      // ※Homeのようにimportしたコンポーネントを設定するのでも可
-      component: () => import('./components/article.vue')
-    },
-    {
-      path: '/welcome',
-      name: 'Welcome',
-      component: Welcome
-    }
+    { path: '/', name: 'Welcome', component: Welcome },
+
+    // 非同期でコンポーネントを呼び出す
+    // ※Homeのようにimportしたコンポーネントを設定するのでも可
+    { path: '/article/:id', name: 'Article', component: () => import('./components/article.vue')},
+    // {
+    //   path: '/welcome',
+    //   name: 'Welcome',
+    //   component: Welcome
+    // }
   ]
   
 })
