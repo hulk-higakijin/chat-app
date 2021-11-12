@@ -2,10 +2,13 @@
   "name": "chat-app",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.3",
+    "actioncable": "^5.2.6",
     "axios": "^0.24.0",
     "turbolinks": "^5.2.0",
     "vue": "^2.6.14",

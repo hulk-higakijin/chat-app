@@ -5,6 +5,7 @@ Vue.use(Router)
 import Welcome from '../javascript/pages/Welcome.vue'
 import Chatroom from '../javascript/pages/Chatroom.vue'
 import useValidate from '../javascript/auth/validate'
+
 const { validate } = useValidate()
 
 const requireAuth = async (to, from, next) => {
@@ -14,7 +15,6 @@ const requireAuth = async (to, from, next) => {
   const accessToken = window.localStorage.getItem('access-token')
 
   if (!uid || !client || !accessToken) {
-    console.log('ログインしていません')
     next({name: 'Welcome'})
     return
   }
