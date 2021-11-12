@@ -3,7 +3,33 @@ import Router from 'vue-router'
 // import Home from './components/home.vue'
 import Welcome from '../javascript/pages/Welcome.vue'
 import Chatroom from '../javascript/pages/Chatroom.vue'
+import useValidate from '../javascript/auth/validate'
+
 Vue.use(Router)
+
+// const { validate } = useValidate()
+
+// const requireAuth = async (to, from, next) => {
+
+//   const uid = window.localStorage.getItem('uid')
+//   const client = window.localStorage.getItem('client')
+//   const accessToken = window.localStorage.get('access-token')
+
+//   if (!uid || !client || !accessToken) {
+//     console.log('ログインしていません')
+//     next({name: 'Welcome'})
+//     return
+//   }
+
+//   await validate()
+
+//   next()
+// }
+
+const requireAuth = async (to, from, next) => {
+  console.log('requireAuthが呼ばれています')
+  next()
+}
 
 export default new Router({
   
@@ -36,10 +62,10 @@ export default new Router({
   // ルーターの設定
   routes: [
     { path: '/', name: 'Welcome', component: Welcome },
-    { path: '/chatroom', name: 'Chatroom', component: Chatroom },
+    { path: '/chatroom', name: 'Chatroom', component: Chatroom, beforeEnter: requireAuth },
     // 非同期でコンポーネントを呼び出す
     // ※Homeのようにimportしたコンポーネントを設定するのでも可
-    { path: '/article/:id', name: 'Article', component: () => import('./components/article.vue')},
+    // { path: '/article/:id', name: 'Article', component: () => import('./components/article.vue')},
     // {
     //   path: '/welcome',
     //   name: 'Welcome',

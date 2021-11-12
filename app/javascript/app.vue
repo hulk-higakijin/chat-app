@@ -1,13 +1,12 @@
 <template>
-  <div> 
-    <!-- <div>
-      <router-link to="/" tag="button">Home</router-link>
-      <router-link to="/article/5">記事 NO.5</router-link>
-      <router-link to="/article/33">記事 NO.33</router-link>
-    </div> -->
-    <!-- router-viewにコンポーネントが描画される -->
-    <router-view/>
-  </div>
+  <!-- <div>
+    <router-link to="/" tag="button">Home</router-link>
+    <router-link to="/article/5">記事 NO.5</router-link>
+    <router-link to="/article/33">記事 NO.33</router-link>
+  </div> -->
+  <!-- router-viewにコンポーネントが描画される -->
+  <router-view/>
+
 </template>
 
 <script>
