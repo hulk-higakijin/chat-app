@@ -119,6 +119,7 @@ GEM
     nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.2.3)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -237,6 +238,7 @@ DEPENDENCIES
   devise_token_auth (~> 1.2)
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  pg
   pry-rails
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
@@ -244,7 +246,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   spring
-  sqlite3 (~> 1.4)
+  sqlite3
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
