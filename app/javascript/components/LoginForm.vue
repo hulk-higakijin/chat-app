@@ -27,7 +27,7 @@ export default {
     async login () {
       try {
         this.error = null
-        const res = await axios.post('http://localhost:3000/auth/sign_in', {
+        const res = await axios.post('https://chat-app-with-vue-on-rails.herokuapp.com/auth/sign_in', {
           email: this.email,
           password: this.password
         })

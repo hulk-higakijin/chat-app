@@ -31,7 +31,7 @@ export default {
     async signUp () {
       this.error = null
       try {
-        const res = await axios.post('http://localhost:3000/auth', {      //サインアップ
+        const res = await axios.post('https://chat-app-with-vue-on-rails.herokuapp.com/auth', {      //サインアップ
           name: this.name,
           email: this.email,
           password: this.password,

@@ -27,7 +27,7 @@ export default {
   methods: {
     async createLike (messageId) {
       try {
-        const res = await axios.post(`http://localhost:3000/messages/${messageId}/likes`, {},
+        const res = await axios.post(`https://chat-app-with-vue-on-rails.herokuapp.com/${messageId}/likes`, {},
           {
             headers: {
               uid: this.uid,
