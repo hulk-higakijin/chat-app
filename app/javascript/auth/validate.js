@@ -1,5 +1,4 @@
-import axios from "axios"
-import { cli } from "webpack"
+import axios from 'axios'
 
 const validate = async () => {
   const uid = window.localStorage.getItem('uid')
@@ -18,7 +17,7 @@ const validate = async () => {
     return res
   } catch (err) {
     console.log(err)
-  }
+  } 
 }
 
 const useValidate = () => {

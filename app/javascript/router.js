@@ -1,35 +1,33 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+Vue.use(Router)
 // import Home from './components/home.vue'
 import Welcome from '../javascript/pages/Welcome.vue'
 import Chatroom from '../javascript/pages/Chatroom.vue'
 import useValidate from '../javascript/auth/validate'
-
-Vue.use(Router)
-
-// const { validate } = useValidate()
-
-// const requireAuth = async (to, from, next) => {
-
-//   const uid = window.localStorage.getItem('uid')
-//   const client = window.localStorage.getItem('client')
-//   const accessToken = window.localStorage.get('access-token')
-
-//   if (!uid || !client || !accessToken) {
-//     console.log('ログインしていません')
-//     next({name: 'Welcome'})
-//     return
-//   }
-
-//   await validate()
-
-//   next()
-// }
+const { validate } = useValidate()
 
 const requireAuth = async (to, from, next) => {
-  console.log('requireAuthが呼ばれています')
+
+  const uid = window.localStorage.getItem('uid')
+  const client = window.localStorage.getItem('client')
+  const accessToken = window.localStorage.getItem('access-token')
+
+  if (!uid || !client || !accessToken) {
+    console.log('ログインしていません')
+    next({name: 'Welcome'})
+    return
+  }
+
+  await validate()
+
   next()
 }
+
+// const requireAuth = async (to, from, next) => {
+//   console.log('requireAuthが呼ばれています')
+//   next()
+// }
 
 export default new Router({
   
